@@ -1,0 +1,36 @@
+{
+  "people": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "expenses": [
+    {
+      "name": "bf",
+      "amount": 400,
+      "payer": "a",
+      "split_type": "all",
+      "split_people": []
+    },
+    {
+      "name": "lunch",
+      "amount": 200,
+      "payer": "c",
+      "split_type": "custom",
+      "split_people": [
+        "a"
+      ]
+    },
+    {
+      "name": "icecream",
+      "amount": 150,
+      "payer": "b",
+      "split_type": "custom",
+      "split_people": [
+        "c",
+        "d"
+      ]
+    }
+  ]
+}

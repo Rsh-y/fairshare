@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FairShare Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero login-hero">
+        <div>
+          <p class="eyebrow">Welcome back</p>
+          <h1>FairShare</h1>
+          <p class="subhead">
+            Log in or register to keep your saved sessions private and continue where you left off.
+          </p>
+        </div>
+        <div class="hero-card">
+          <p class="hero-title">Account access</p>
+          <div class="form-grid auth-grid">
+            <label>
+              Username
+              <input id="authUsername" type="text" placeholder="yourname" />
+            </label>
+            <label>
+              Password
+              <input id="authPassword" type="password" placeholder="••••••••" />
+            </label>
+          </div>
+          <div class="row">
+            <button id="loginBtn" class="primary">Log in</button>
+            <button id="registerBtn" class="ghost">Register</button>
+          </div>
+          <div id="authError" class="error"></div>
+        </div>
+      </header>
+    </div>
+
+    <script src="/static/login.js"></script>
+  </body>
+</html>

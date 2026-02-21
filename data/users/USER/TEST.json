@@ -1,0 +1,32 @@
+{
+  "people": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "expenses": [
+    {
+      "name": "BREAKFAST",
+      "amount": 400,
+      "payer": "A",
+      "split_type": "all",
+      "split_people": []
+    },
+    {
+      "name": "LUNCH",
+      "amount": 4000,
+      "payer": "B",
+      "split_type": "all",
+      "split_people": []
+    },
+    {
+      "name": "DINNER",
+      "amount": 400,
+      "payer": "C",
+      "split_type": "all",
+      "split_people": []
+    }
+  ],
+  "bill_token": "f5729912589a4389baa4ea2a80582c59"
+}

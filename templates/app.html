@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Expense Splitter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Group expenses, settled clearly</p>
+          <h1>FairShare</h1>
+          <p class="subhead">
+            Add people, log expenses, and let the Python core calculate who owes whom.
+          </p>
+        </div>
+        <div class="hero-card">
+          <p class="hero-title">How it works</p>
+          <ol class="steps">
+            <li>Add everyone in your group.</li>
+            <li>Log each expense and how it was split.</li>
+            <li>Get simplified settlements instantly.</li>
+          </ol>
+          <button id="logoutBtn" class="ghost full-width">Log out</button>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel">
+          <h2>People</h2>
+          <div class="row">
+            <input id="personInput" type="text" placeholder="Add a person" />
+            <button id="addPersonBtn" class="primary">Add</button>
+          </div>
+          <div id="peopleList" class="pill-group spaced"></div>
+          <div class="upload-block">
+            <h3>UPI QR codes</h3>
+            <p class="muted">Upload each person's UPI QR to show in payment sections.</p>
+            <div id="qrList" class="qr-list"></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Expenses</h2>
+          <div class="form-grid">
+            <label>
+              Expense name
+              <input id="expenseName" type="text" placeholder="Dinner" />
+            </label>
+            <label>
+              Amount
+              <input id="expenseAmount" type="number" min="0" step="0.01" placeholder="45.00" />
+            </label>
+            <label>
+              Paid by
+              <select id="expensePayer"></select>
+            </label>
+            <label>
+              Split
+              <select id="splitType">
+                <option value="all">Everyone</option>
+                <option value="custom">Specific people</option>
+              </select>
+            </label>
+            <label class="span-full">
+              Bill photo(s) for this expense
+              <input id="expenseBills" type="file" accept="image/*" multiple />
+            </label>
+          </div>
+          <div id="expenseHint" class="hint"></div>
+          <div id="splitPeople" class="pill-group"></div>
+          <button id="addExpenseBtn" class="primary">Add expense</button>
+
+          <div class="table">
+            <div class="table-header">
+              <span>Expense</span>
+              <span>Payer</span>
+              <span>Split</span>
+              <span>Amount</span>
+              <span></span>
+            </div>
+            <div id="expenseRows" class="table-body"></div>
+          </div>
+
+          <div class="upload-block">
+            <h3>Bill photos</h3>
+            <p class="muted">Upload bill images to keep with this session.</p>
+            <input id="billUpload" type="file" accept="image/*" multiple />
+            <div id="billStatus" class="hint"></div>
+            <div id="billPreview" class="preview-grid"></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Results</h2>
+          <div class="row">
+            <button id="computeBtn" class="accent">Compute settlements</button>
+            <button id="downloadBtn" class="primary">Download receipt</button>
+            <button id="clearBtn" class="ghost">Reset</button>
+          </div>
+          <div class="save-block">
+            <div class="row">
+              <input id="saveNameInput" type="text" placeholder="Save progress as..." />
+              <button id="saveProgressBtn" class="ghost">Save progress</button>
+              <button id="clearSessionsBtn" class="ghost">Clear all sessions</button>
+            </div>
+            <div class="saved-header">Saved sessions</div>
+            <div id="savedSessions" class="saved-list"></div>
+          </div>
+          <div id="errorBox" class="error"></div>
+          <div class="results">
+            <div>
+              <h3>Summary</h3>
+              <pre id="summaryBox"></pre>
+            </div>
+            <div>
+              <h3>Simplified settlements</h3>
+              <div id="settlements" class="settlements"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

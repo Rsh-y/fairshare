@@ -1,0 +1,8 @@
+{
+  "USER": {
+    "password_hash": "scrypt:32768:8:1$i7RZQcgx6UYRP1lD$894238407ace323dbaded0d7caa992b91a0a069bc1c3d187641bbb27e02344a775075d37ece8aa94bf989a77a849b4cc2a797cf7c9c4ee3702ddc8145a3fcba0"
+  },
+  "aniketh": {
+    "password_hash": "scrypt:32768:8:1$Ddy7xAm192e3IkA0$689eed22c308a044f41a18fe79615f4274d6ef17f4170c1de2f75a99dd7dbdd7e82ca97cd4a836bd8576ae3cc585dfb0110df934adca8c443abd17ea185461c3"
+  }
+}
